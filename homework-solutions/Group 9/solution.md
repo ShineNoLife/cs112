@@ -39,4 +39,3 @@ Ta áp dụng 4 quy tắc phân tích:
 Vậy độ phức tạp tiệm cận của $T(n)$ là $O(n^2)$
 
 
-
