@@ -16,10 +16,11 @@ g++ -std=c++17 -O2 -pipe -static -s validator.cpp  -o validator
 g++ -std=c++17 -O2 -pipe -static -s solution.cpp   -o solution
 
 # Build tất cả generator có trong thư mục gen/
-g++ -std=c++17 -O2 -pipe -static -s gen/genNormalCase.cpp -o genNormalCase
-g++ -std=c++17 -O2 -pipe -static -s gen/genEdgeCase.cpp -o genEdgeCase
-g++ -std=c++17 -O2 -pipe -static -s gen/genSpecialCase.cpp -o genSpecialCase
-g++ -std=c++17 -O2 -pipe -static -s gen/genStressCase.cpp -o genStressCase
+g++ gen/genNormalCase.cpp -o genNormalCase
+g++ gen/genEdgeCase.cpp -o genEdgeCase
+g++ gen/genSpecialCase.cpp -o genSpecialCase
+g++ gen/genStressCase.cpp -o genStressCase
+g++ gen/genGPT.cpp -o genGPT
 
 echo "[Compile] Done."
 
@@ -63,15 +64,20 @@ gen_and_run() {
 # =============================
 #  NORMAL CASES
 # =============================
-gen_and_run genNormalCase 1 20
+gen_and_run genNormalCase 1 10
 
 for type in {1..5}; do
-    gen_and_run genEdgeCase $type 5 
+    gen_and_run genEdgeCase $type 4
 done
 
 for type in {1..4}; do
-    gen_and_run genSpecialCase $type 5 
+    gen_and_run genSpecialCase $type 3 
 done
+
+for type in {1..10}; do
+    gen_and_run genGPT $type 3
+done
+
 
 gen_and_run genStressCase 1 10
 

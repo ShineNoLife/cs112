@@ -16,16 +16,17 @@ g++ -std=c++17 -O2 -pipe -static -s validator.cpp  -o validator
 g++ -std=c++17 -O2 -pipe -static -s solution.cpp   -o solution
 
 # Build tất cả generator có trong thư mục gen/
-g++ -std=c++17 -O2 -pipe -static -s gen/genEdgeCase.cpp         -o genEdgeCase
-g++ -std=c++17 -O2 -pipe -static -s gen/genEdgeCase2.cpp        -o genEdgeCase2
-g++ -std=c++17 -O2 -pipe -static -s gen/genHandleTest1.cpp      -o genHandleTest1
-g++ -std=c++17 -O2 -pipe -static -s gen/genLine.cpp             -o genLine
-g++ -std=c++17 -O2 -pipe -static -s gen/genMaxDense.cpp         -o genMaxDense
-g++ -std=c++17 -O2 -pipe -static -s gen/genMaxSparse.cpp        -o genMaxSparse
-g++ -std=c++17 -O2 -pipe -static -s gen/genMaxStar.cpp          -o genMaxStar
-g++ -std=c++17 -O2 -pipe -static -s gen/genNormalCase.cpp       -o genNormalCase
-g++ -std=c++17 -O2 -pipe -static -s gen/genStressCase.cpp       -o genStressCase
-g++ -std=c++17 -O2 -pipe -static -s gen/gen-1.cpp -o gen-1
+g++ gen/genEdgeCase.cpp         -o genEdgeCase
+g++ gen/genEdgeCase2.cpp        -o genEdgeCase2
+g++ gen/genHandleTest1.cpp      -o genHandleTest1
+g++ gen/genLine.cpp             -o genLine
+g++ gen/genMaxDense.cpp         -o genMaxDense
+g++ gen/genMaxSparse.cpp        -o genMaxSparse
+g++ gen/genMaxStar.cpp          -o genMaxStar
+g++ gen/genNormalCase.cpp       -o genNormalCase
+g++ gen/genStressCase.cpp       -o genStressCase
+g++ gen/gen-1.cpp               -o gen-1
+g++ gen/genGPT.cpp              -o genGPT
 
 echo "[Compile] Done."
 
@@ -82,5 +83,8 @@ gen_and_run genMaxStar 1 3
 gen_and_run genStressCase 1 15
 gen_and_run genHandleTest1 1 1
 gen_and_run gen-1 1 10
+for((x=1;x<=10;x++)); do
+    gen_and_run genGPT ${x} 3
+done
 
 echo "✅ All test data generated successfully with base seed ${base_seed}!"
