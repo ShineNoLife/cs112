@@ -22,6 +22,8 @@ int main(int argc, char *argv[]) {
     long long res_correct = read_ans(n, ans);
     long long res_submitted = read_ans(n, ouf);
 
+    ouf.readEof();
+
     if (res_correct != res_submitted) {
         quitf(_wa, "Wrong answer: expected %lld, found %lld", res_correct, res_submitted);
     }

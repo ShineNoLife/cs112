@@ -21,11 +21,6 @@ void genNormalCase() {
     for (auto [u,v] : edges)
         cout << u << " " << v << "\n";
 }
-
-void genEdgeCase() {}
-void genSpecialCase() {}
-void genStressCase() {}
-
 int main(int argc, char* argv[]) {
     registerGen(argc, argv, 1);
     int type = atoi(argv[1]);

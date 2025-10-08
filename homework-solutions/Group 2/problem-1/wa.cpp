@@ -14,6 +14,6 @@ signed main() {
         cin >> a[i];
         sum += a[i];
     }
-    cout << sum << "\n";
+    cout << sum;
     return 0;
 }

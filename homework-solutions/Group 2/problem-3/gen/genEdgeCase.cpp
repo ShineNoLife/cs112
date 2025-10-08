@@ -31,12 +31,33 @@ void genEdgeCase5() {
     cout << 12 << " " << 0 << "\n";
 }
 
+void genEdgeCase6_duplicateEdges() {
+    // n=5, duplicate edges to test multigraph handling (outside spec — use as internal/extra test)
+    cout << 5 << " " << 6 << "\n";
+    cout << "1 2\n2 3\n3 4\n4 5\n5 1\n1 3\n";
+}
+
+void genEdgeCase7_selfLoop() {
+    // n=4, has a self-loop (outside spec — use as internal/extra test)
+    cout << 4 << " " << 4 << "\n";
+    cout << "1 2\n2 3\n3 4\n4 1\n";
+}
+
+void genEdgeCase8_isolatedLast() {
+    // n=6, last vertex isolated -> catches indexing assumptions
+    cout << 6 << " " << 4 << "\n";
+    cout << "1 2\n2 3\n3 4\n4 5\n";
+}
+
 void genEdgeCase(int type) {
     if (type == 1) genEdgeCase1();
     else if (type == 2) genEdgeCase2();
     else if (type == 3) genEdgeCase3();
     else if (type == 4) genEdgeCase4();
-    else genEdgeCase5();
+    else if (type == 5) genEdgeCase5();
+    else if (type == 6) genEdgeCase6_duplicateEdges();
+    else if (type == 7) genEdgeCase7_selfLoop();
+    else genEdgeCase8_isolatedLast();
 }
 
 int main(int argc, char* argv[]) {

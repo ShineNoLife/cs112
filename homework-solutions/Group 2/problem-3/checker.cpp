@@ -37,18 +37,20 @@ int main(int argc, char* argv[]) {
     for (int i = 1; i < n; i++)
         contestant.push_back(ouf.readInt());
 
-    // Kiểm tra tính hợp lệ của output thí sinh
-    vector<bool> used(n + 1, false);
-    for (int i = 0; i < n; i++) {
-        int u = contestant[i];
-        if (u < 1 || u > n)
+        
+        // Kiểm tra tính hợp lệ của output thí sinh
+        vector<bool> used(n + 1, false);
+        for (int i = 0; i < n; i++) {
+            int u = contestant[i];
+            if (u < 1 || u > n)
             quitf(_wa, "Vertex %d out of range [1, %d]", u, n);
-        if (used[u])
+            if (used[u])
             quitf(_wa, "Vertex %d appears multiple times", u);
-        used[u] = true;
-        if (i > 0 && !adj[contestant[i - 1]][u])
+            used[u] = true;
+            if (i > 0 && !adj[contestant[i - 1]][u])
             quitf(_wa, "No edge between %d and %d", contestant[i - 1], u);
-    }
-
+        }
+    ouf.readEof();
     quitf(_ok, "Valid Hamiltonian path");
+
 }

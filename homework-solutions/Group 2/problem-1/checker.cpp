@@ -16,11 +16,13 @@ int main(int argc, char* argv[]) {
     // Đọc output của thí sinh
     long long contestant = ouf.readLong();
 
+    
+    ouf.readEof();
     // So sánh
     if (contestant != expected) {
         quitf(_wa, "Expected %lld, found %lld", expected, contestant);
     }
-
+    
     // Nếu khớp
     quitf(_ok, "Correct answer: %lld", contestant);
 }

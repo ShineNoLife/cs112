@@ -21,10 +21,22 @@ void genStressCase() {
         cout << u << " " << v << "\n";
 }
 
+void genWorstCaseForBruteforce() {
+    int n = 12;
+    vector<pair<int,int>> edges;
+    for (int i = 1; i <= n; ++i)
+        for (int j = i+1; j <= n; ++j)
+            if ((i + j) % 5 != 0) // remove some pattern to foil heuristics
+                edges.push_back({i,j});
+    cout << n << " " << edges.size() << "\n";
+    for (auto &e: edges) cout << e.first << " " << e.second << "\n";
+}
+
 int main(int argc, char* argv[]) {
     registerGen(argc, argv, 1);
     int type = atoi(argv[1]);
     int seed = atoi(argv[2]);
     rnd.setSeed(seed);
-    genStressCase();
+    if (type == 1) genStressCase();
+    else genWorstCaseForBruteforce();
 }

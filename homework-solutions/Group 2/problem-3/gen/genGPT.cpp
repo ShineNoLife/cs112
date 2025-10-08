@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
         for (int i = 1; i <= n; i++)
             for (int j = i + 1; j <= n; j++)
                 add_edge(i, j);
-        edges.erase(edges.begin() + rnd.next(0, (int)edges.size() - 1));
+        if (!edges.empty()) edges.erase(edges.begin() + rnd.next(0, (int)edges.size() - 1));
     }
 
     else if (type == 7) { // Random dense
@@ -60,14 +60,14 @@ int main(int argc, char **argv) {
         int max_m = n * (n - 1) / 2;
         m = rnd.next(n, max_m / 3);
         set<pair<int,int>> used;
-        while ((int)edges.size() < m) {
+        while ((int)used.size() < m) {
             int u = rnd.next(1, n);
             int v = rnd.next(1, n);
             if (u == v) continue;
             if (u > v) swap(u, v);
             used.insert({u, v});
-            edges.assign(used.begin(), used.end());
         }
+        edges.assign(used.begin(), used.end());
     }
 
     else if (type == 8) { // Minimal 2 nodes
@@ -84,6 +84,11 @@ int main(int argc, char **argv) {
         int mid = n / 2;
         for (int i = 1; i < mid; i++) add_edge(i, i + 1);
         for (int i = mid + 1; i < n; i++) add_edge(i, i + 1);
+    }
+
+    else if (type == 11) { // Oversized test to catch int/unsigned bugs (use in internal testing only)
+        n = 100000; // intentionally outside constraints
+        for (int i = 1; i <= 5; ++i) add_edge(i, i+1);
     }
 
     m = (int)edges.size();

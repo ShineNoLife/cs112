@@ -38,8 +38,7 @@ int main() {
 			from[j.first] = i;
 			if (!inqueue[j.first]) {
 				inqueue[j.first] = true;
-				if (que.size() && dist[j.first] <= dist[que.front()]) que.push_front(j.first);
-				else que.push_back(j.first);
+				que.push_front(j.first);
 			}
 		}
 	}
