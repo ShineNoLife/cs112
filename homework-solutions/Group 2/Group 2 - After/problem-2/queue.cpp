@@ -25,20 +25,20 @@ int main() {
 	std::vector<int64_t> dist(n, INF);
 	std::vector<int> from(n, -1);
 	std::vector<bool> inqueue(n, false);
-	std::deque<int> que;
-	que.push_back(s);
+	std::queue<int> que;
+	que.push(s);
 	dist[s] = 0;
 	inqueue[s] = true;
 	while (que.size()) {
 		auto i = que.front();
-		que.pop_front();
+		que.pop();
 		inqueue[i] = false;
 		for (auto j : hen[i]) if (dist[j.first] > dist[i] + j.second) {
 			dist[j.first] = dist[i] + j.second;
 			from[j.first] = i;
 			if (!inqueue[j.first]) {
 				inqueue[j.first] = true;
-				que.push_front(j.first);
+				que.push(j.first);
 			}
 		}
 	}
