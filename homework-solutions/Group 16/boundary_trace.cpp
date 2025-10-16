@@ -95,8 +95,8 @@ Vec getNextPoint(float x, float y, int lastBossID) {
     }
     
     if(foundSpecialZone) {
-        angle += 0.3f;
-        float radius = 80 + angle * 10;
+        angle += 0.5f;
+        float radius = 80 + angle * 60;
         return Vec{
             specialZoneCenter.x + radius * cos(angle),
             specialZoneCenter.y + radius * sin(angle)
@@ -116,7 +116,7 @@ Vec getNextPoint(float x, float y, int lastBossID) {
             return target;
         } else {
             angle += 0.5f;
-            float radius = 100 + angle * 10;
+            float radius = 80 + angle * 60;
             return Vec{
                 currentPos.x + radius * cos(angle),
                 currentPos.y + radius * sin(angle)
