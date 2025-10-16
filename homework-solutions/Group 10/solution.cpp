@@ -12,7 +12,7 @@ pair<ll, ll> dp[N];
 
 void dfs(int u) {
     if (G[u].empty()) {
-        dp[u] = {1, w[u]};
+        dp[u] = {0, w[u]};
         return;
     }
 
@@ -20,13 +20,13 @@ void dfs(int u) {
     
     sort(G[u].begin(), G[u].end(), [&] (int a, int b) { return dp[a].second < dp[b].second; });
 
-    ll min_kept = 0;
+    ll sumFired = 0;
     ll cap = w[u] + (int) G[u].size();
     ll numFired = 0;
 
     for (int v : G[u]) {
-        auto [kept_v, cap_v] = dp[v];
-        min_kept += kept_v;
+        auto [fired_v, cap_v] = dp[v];
+        sumFired += fired_v;
 
         if (cap + cap_v - 1 <= m) {
             cap += cap_v - 1;
@@ -34,7 +34,7 @@ void dfs(int u) {
         } 
     }
 
-    dp[u] = {1 + min_kept - numFired, cap};
+    dp[u] = {sumFired + numFired, cap};
     return;
 }
 
@@ -52,8 +52,7 @@ int main() {
     }
 
     dfs(1);
-    ll ans = n - dp[1].first;
-    cout << ans << "\n";
+    cout << dp[1].first << "\n";
 
     return 0;
 }
