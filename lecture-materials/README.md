@@ -6,7 +6,7 @@ Trước khi vào phòng thi, BTC ICPC thông báo một tin động trời, đ�
 
 Để tiếp tục giữ học bổng và có tiền ăn sáng, các bạn KHTN2024 muốn tạo ra ít nhóm nhất có thể để thi ICPC, giúp giảm cạnh tranh giữa các nhóm.
 
-Học sinh thứ $i$ của lớp đang đứng ở vị trí thứ $x_i$ trong hàng chờ, và có chỉ số rating Codeforces là $r_i$. Học sinh $j$ sẽ có thể cùng team với học sinh $i$ nếu $|x_i - x_j| \le r_i - r_j$.
+Lớp KHTN2024 có $N$ học sinh, học sinh thứ $i$ của lớp đang đứng ở vị trí thứ $x_i$ trong hàng chờ, và có chỉ số rating Codeforces là $r_i$. Học sinh $j$ sẽ có thể cùng team với học sinh $i$ nếu $|x_i - x_j| \le r_i - r_j$.
 
 Bạn hãy giúp tìm số đội tối thiểu cho lớp KHTN2024 nhé.
 
