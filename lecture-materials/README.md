@@ -14,7 +14,7 @@ Bạn hãy giúp tìm số đội tối thiểu cho lớp KHTN2024 nhé.
 
 Dòng đầu tiên chứa một số nguyên dương N $(1 \le N \le 5.10^5)$ - Số học sinh trong lớp 
 
-$N$ dòng tiếp theo, mỗi dòng chứa $2$ số nguyên $x_i, r_i, (1 \le x_i, r_i \le 10^9)$ - vị trí và chiều cao của học sinh thứ $i$ trong hàng 
+$N$ dòng tiếp theo, mỗi dòng chứa $2$ số nguyên $x_i, r_i, (1 \le x_i, r_i \le 10^9)$ - vị trí và rating Codeforces của học sinh thứ $i$ trong hàng 
 
 ## Output
 
