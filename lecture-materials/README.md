@@ -26,6 +26,33 @@ In ra số lượng nhóm tối thiểu sao cho học sinh nào cũng ở trong 
 50% số test còn lại không có ràng buộc gì thêm.
 
 
+## Examples 
+### Input 1
+```
+4
+4 2
+2 3
+3 4
+6 5
+```
+### Output 1
+```
+2
+```
+
+### Input 2
+```
+3
+7 10
+10 10
+7 10
+```
+### Output 2
+```
+2
+```
+
+
 # Các tiêu chí đánh giá BTVN 
 
 ## Mô tả thuật toán
