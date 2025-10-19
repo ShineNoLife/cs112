@@ -26,7 +26,7 @@ In ra số lượng nhóm tối thiểu sao cho học sinh nào cũng ở trong 
 50% số test còn lại không có ràng buộc gì thêm.
 
 
-# Các tiêu chí đánh giá BTVN (Nhóm 3)
+# Các tiêu chí đánh giá BTVN 
 
 ## Mô tả thuật toán
 **Với mỗi subtask**, sẽ có các tiêu chí đánh giá sau:
