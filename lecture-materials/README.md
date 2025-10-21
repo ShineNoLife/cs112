@@ -55,6 +55,14 @@ In ra số lượng nhóm tối thiểu cần được tạo ra sao cho học si
 2
 ```
 
+### Giải Thích Examples
+
+Thành viên thứ 3 sẽ tạo nhóm 1 và thành viên thứ 4 sẽ tạo nhóm 2.
+
+Thành viên 1 và thành viên 3 có thể tham gia vào nhóm 1.
+
+Thế nên số nhóm tối thiểu cần được tạo ra là 2.
+
 
 # Các tiêu chí đánh giá BTVN 
 
