@@ -4,11 +4,14 @@ Lại tới một mùa thi ICPC mới tại UIT, và các thí sinh đang xếp 
 
 Trước khi vào phòng thi, BTC ICPC thông báo một tin động trời, đó là một đội có thể có bao nhiêu bạn cũng được.
 
-Để tiếp tục giữ học bổng và có tiền ăn sáng, các bạn KHTN2024 muốn tạo ra ít nhóm nhất có thể để thi ICPC, giúp giảm cạnh tranh giữa các nhóm.
+Để tiếp tục giữ học bổng và có tiền ăn sáng, các bạn KHTN2024 muốn tạo ra ít đội nhất có thể để thi ICPC, giúp giảm cạnh tranh giữa các đội.
 
-Lớp KHTN2024 có $N$ học sinh, học sinh thứ $i$ của lớp đang đứng ở vị trí thứ $x_i$ trong hàng chờ, và có chỉ số rating Codeforces là $r_i$. Học sinh $j$ sẽ vào cùng team với học sinh $i$ nếu $|x_i - x_j| \le r_i - r_j$.
 
-Bạn hãy giúp tìm số đội tối thiểu cho lớp KHTN2024 nhé.
+Lớp KHTN2024 có $N$ học sinh, học sinh thứ $i$ của lớp đang đứng ở vị trí thứ $x_i$ trong hàng chờ, và có chỉ số rating Codeforces là $r_i$. 
+
+Ban đầu sẽ không ai ở trong đội nào, mỗi bạn có thể tự tạo đội mới của mình, hoặc gia nhập đội của 1 bạn khác, bạn $j$ có thể gia nhập đội của bạn $i$ nếu $i$ đã có đội và $|x_i - x_j| \le r_i - r_j$.
+
+Bạn hãy giúp tìm số đội tối thiếu cần phải được tạo ra để ai trong $N$ bạn cũng sẽ có đội nhé.
 
 ## Input
 
