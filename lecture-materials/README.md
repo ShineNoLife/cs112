@@ -21,7 +21,7 @@ $N$ dòng tiếp theo, mỗi dòng chứa $2$ số nguyên $x_i, r_i, (1 \le x_i
 
 ## Output
 
-In ra số lượng nhóm tối thiểu sao cho học sinh nào cũng ở trong một nhóm
+In ra số lượng nhóm tối thiểu cần được tạo ra sao cho học sinh nào cũng ở trong một nhóm
 
 ## Subtasks
 
