@@ -55,7 +55,7 @@ In ra số lượng nhóm tối thiểu cần được tạo ra sao cho học si
 2
 ```
 
-### Giải Thích Examples
+### Giải Thích Examples 1
 
 Thành viên thứ 3 sẽ tạo nhóm 1 và thành viên thứ 4 sẽ tạo nhóm 2.
 
