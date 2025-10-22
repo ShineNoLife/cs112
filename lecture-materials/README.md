@@ -63,6 +63,9 @@ Thành viên 1 và thành viên 2 có thể tham gia vào nhóm 1.
 
 Thế nên số nhóm tối thiểu cần được tạo ra là 2.
 
+### Lưu ý khi nộp code bằng python
+
+vì input lên đến $5.10^5$ nên code bằng python sẽ chạy rất chậm, bạn có thể dùng sys.stdin.readline để đọc nhanh hơn
 
 # Các tiêu chí đánh giá BTVN 
 
