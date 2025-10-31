@@ -32,3 +32,6 @@
 │   └── ...
 ├── README.md
 ```
+
+- `homework-solutions/` chứa lời giải cho bài tập của các nhóm khác.
+- `lecture-materials` chứa tài liệu về chủ đề thảo luận của nhóm mình.
