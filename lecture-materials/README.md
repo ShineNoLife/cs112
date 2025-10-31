@@ -99,3 +99,7 @@ Cách tính điểm cho BTVN:
 - Điểm chấm các tiêu chí: 30%
 
 Điểm chấm các tiêu chí là 30% số điểm, và có 15 tiêu chí, nên mỗi tiêu chí sẽ tương đương với 0.2đ tổng kết 
+
+## Kết quả chấm điểm
+
+[Bấm vào để dẫn tới link kết qủa chấm điểm](https://docs.google.com/spreadsheets/d/1SE-oroH1WxN_Zy-XRYTmP3nGbJYc2meeKAh_AAAo8Ok/edit?gid=0#gid=0)
