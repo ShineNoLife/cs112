@@ -24,9 +24,19 @@ def area(poly):
         s += x1 * y2 - y1 * x2
     return abs(s)
 
+<<<<<<< HEAD
 
 n = int(input().strip())
 points = [tuple(map(int, input().split())) for _ in range(n)]
+=======
+import sys
+input = sys.stdin.readline
+n = int(input())
+points = []
+for _ in range(n):
+    x, y = map(int, input().split())
+    points.append((x, y))
+>>>>>>> 57b39084e44be7b8593e9a00101b0a07a6694507
 
 hull = convex_hull(points)
 print(area(hull))

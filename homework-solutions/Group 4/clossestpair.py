@@ -34,6 +34,12 @@ def closest_pair(points):
     
     return solve(points)
 
+<<<<<<< HEAD
+=======
+import sys
+input = sys.stdin.readline
+
+>>>>>>> 57b39084e44be7b8593e9a00101b0a07a6694507
 n = int(input().strip())
 points = [tuple(map(int, input().split())) for _ in range(n)]
 
