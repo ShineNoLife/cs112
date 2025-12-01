@@ -88,10 +88,6 @@ int main() {
         beam = move(nextBeam);
     }
 
-    start.path = {1};
-    start.visitedMask = 1LL << 0; // vertex 1
-    beamWidth = 10000;
-
     if (bestLen == -1) cout << "-1\n";
     else {
         cout << bestLen - 1 << "\n";
