@@ -1,0 +1,128 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % để gõ tiếng Việt
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\geometry{margin=2.5cm}
+\setlength{\parskip}{0.75em}
+\setlength{\parindent}{0pt}
+
+
+\definecolor{bgcolor}{HTML}{fdf6e3}
+\definecolor{textcolor}{HTML}{586e75}
+\definecolor{keywordcolor}{HTML}{d33682}
+\definecolor{typecolor}{HTML}{268bd2}
+\definecolor{stringcolor}{HTML}{cb4b16}
+\definecolor{commentcolor}{HTML}{859900}
+\usepackage{minted}
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	backgroundcolor=\color{gray!5},
+	frame=single,
+	numbers=left,
+	numberstyle=\tiny,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{orange},
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=4
+}
+
+\begin{document}
+	
+	\begin{figure}
+		\centering
+
+		{\Large \textbf{Bài tập về nhà - Nhóm 3}}\\[1cm]
+		{\large Thành viên:}\\[0.2cm]
+		\begin{tabular}{ll}
+			1. & Hà Xuân Thiện - 24520031 \\
+			2. & Trần Quang Trường - 24521901 \\
+		\end{tabular}\\[0.5cm]
+
+		{\large \today}
+	\end{figure}
+
+Ta có một số nhận xét bài toán như sau:
+
+Khi một Pokemon $u$ đánh thắng $v$ theo thuộc tính $x$ thì:
+\begin{itemize}
+	\item Hoặc $a_{u, x} \ge a_{v, x}$, lúc này chi phí bỏ ra $k_x(u, v) = 0$.
+	\item Hoặc ta cần tốn chi phí $k_x(u, v) = a_{v, x} - a_{u, x}$ để $a_{u, x} + k_x(u, v) \ge a_{v, x}$.
+\end{itemize}
+
+Mở rộng hơn, để một Pokemon $u$ đánh thắng $v$ thì ta cần tốn chi phí là $\min_{x = 1}^m k_x(u, v)$.
+
+Lúc này, biến đổi bài toán thành bài toán đồ thị (\textbf{phương pháp thiết kế biến đổi để trị}). Cụ thể:
+
+\begin{itemize}
+	\item Coi mỗi pokemon là một đỉnh của đồ thị.
+	\item Với mỗi cạnh $u$ đi tới $v$ có trọng số bằng $min_{x=1}^m k_x(u, v) + c_v$.
+	\item Bài toán trở thành tìm kiếm đường đi ngắn nhất từ $1$ tới $n$. 
+\end{itemize}
+
+Để giải quyết bài toán tìm kiếm đường đi ngắn nhất từ $1$ tới $n$ ta sử dụng thuật toán dijstra (\textbf{phương pháp thiết kế tham lam}).
+
+Tuy nhiên, khi đánh giá về độ phức tạp thời gian của bài toán hiện tại, để xây dựng được tập cạnh, tại mỗi đỉnh $u$ ta cần xét trọng số tại mỗi đỉnh $v$ với chi phí $O(m)$, do đó tổng độ phức tạp thời gian để xây dựng tập cạnh là $O(n^2 \cdot m)$.
+
+Người thông minh như bạn sẽ nghĩ tới việc tối ưu tập cạnh của bài toán bằng cách thêm một tập đỉnh chứa thuộc tính của mỗi pokemon nên tập đỉnh lúc này là $n \cdot m + n$:
+\begin{itemize}
+	\item $B_i$ là đường đi ngắn nhất từ $1$ đến $i$.
+	\item $A_{i, x} = \min_{u=1}^n [B_u + k_{x}(u, i)]$.
+\end{itemize}
+
+Tập cạnh lúc này trở thành:
+\begin{enumerate}
+	\item Tại mỗi thuộc tính $x$, không mất tính tổng quát, ta giả sử $a_{1, x}, a_{2, x}, \ldots, a_{n, x}$ tăng dần. (aka Phương pháp thiết kế biến đổi để trị)
+	\begin{itemize}
+		\item Với mỗi $i \ge 2$, ta thêm $1$ cạnh từ $A_{i, x}$ đến $A_{i-1, x}$ với trọng số bằng $0$.
+		\item Với mỗi $i < n$, ta thêm $1$ cạnh từ $A_{i, x}$ đến $A_{i+1, x}$ với trọng số $a_{i+1, x} - a_{i, x}$.
+	\end{itemize}
+	
+	\item Tại mỗi $1 \le i \le n$, với mỗi $1 \le x \le m$, ta thêm cạnh $A_{i, x}$ đến $B_{i}$ với trọng số là $c_i$; và một cạnh từ $B_{i}$ đến $A_{i, x}$ với trọng số là $0$.
+	
+\end{enumerate}
+
+Như vậy đồ thị trở thành $G = (V = n \cdot m + n, E = 4 \cdot n \cdot m)$. Bài toán trở thành tìm đường đi ngắn nhất từ $B_1$ đến $B_n$.
+
+Vì ta sử dụng thuật toán dijstra do đó:
+\begin{itemize}
+	\item \textbf{Độ phức tạp thời gian} là $\Theta(n \cdot m \log {(n \cdot m)})$.
+\end{itemize}
+
+Ta cần lưu trữ tập đỉnh $n \cdot m + n$ cho thuật toán nên:
+\begin{itemize}
+\item \textbf{Độ phức tập không gian của bài toán} là $\Theta(n \cdot m)$.
+\end{itemize}
+
+
+\textbf{Vậy, tại sao cách tối ưu tập đồ thị như trên lại đúng?}
+
+Khi tập cạnh là mỗi pokemon có thuộc tính thì việc tạo mỗi cạnh $A_{u, x}$ đến mọi $A_{v, x}$ với $1 \le v \le n$ là không cần thiết.
+
+Nếu xây dựng theo như $1$, thì $A_{u, x}$ có thể đến $A_{u+2, x}$ với trọng số là $$a_{u+2, x} - a_{u+1, x} + a_{u+1, x} - a_{u,x} = a_{u+2, x}-a_{u, x}$$ bằng cách đi qua đỉnh trung gian $A_{u+1, x}$. 
+
+Mở rộng, $A_{u, x}$ có thể đến $A_{v, x}$ với trọng số $A_{v, x} - A_{u, x}$ thông qua các đỉnh trung gian $A_{u+1, x}, A_{u+2, x}, \ldots, A_{v-1, x}$ với $u < v$.
+
+Cũng tương tự, ta có thể chứng minh rằng: 
+
+$A_{u, x}$ có thể đến $A_{v, x}$ với trọng số bằng $0$ thông qua các đỉnh trung gian $A_{u-1, x}, A_{u-2, x}, \cdots, A_{2, x}$.
+
+\textbf{Vì sao phương pháp thiết kế lại phù hợp?}
+\begin{itemize}
+	\item \textbf{Với phương pháp thiết kế biến đổi để trị}, như đã trình bày qua cách giải quyết bài toán, vì bài toán gốc sẽ khó giải quyết nếu ta không biến đổi bài toán và việc biến đổi bài toán ban đầu thành bài toán khác không làm khác đi kết quả bài toán. Như việc biến đổi bài toán thành bài toán đồ thị không làm mất đi tính chất của bài toán; việc sắp xếp lại mảng tăng dần cũng không làm thay đổi bài toán. 
+	\item \textbf{Với phương pháp thiết kế tham lam}, vì đơn giản thuật toán ta sử dụng là thuật toán dijstra, phần này chúng ta đã có bàn ở buổi lý thuyết đồ thị nên mình sẽ không giải thích thêm.
+\end{itemize}
+
+
+\end{document}

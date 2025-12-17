@@ -1,0 +1,4 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\numberline {1}Phương pháp thiết kế thuật toán (0.4 điểm)}{2}{section.1}%
+\contentsline {section}{\numberline {2}Tính phù hợp của phương pháp (0.3 điểm)}{2}{section.2}%
+\contentsline {section}{\numberline {3}Phân tích độ phức tạp thời gian và không gian (0.3 điểm)}{3}{section.3}%
