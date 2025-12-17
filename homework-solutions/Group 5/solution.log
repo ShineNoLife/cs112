@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  30 OCT 2025 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  2 DEC 2025 10:26
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **solution.tex
 (./solution.tex
@@ -644,7 +644,7 @@ Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -825,8 +825,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [8]
 
 [9]
-runsystem(latexminted cleantemp  --timestamp 20251030183341 550237B8FBCDF3741BB
-1127D0FC7F6BF)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20251202102653 550237B8FBCDF3741BB
+1127D0FC7F6BF)...executed.
 
  (./solution.aux)
  ***********
@@ -857,7 +857,7 @@ b></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texmf-dis
 t/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/
 vnr6.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/share/te
 xmf-dist/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on solution.pdf (9 pages, 185438 bytes).
+Output written on solution.pdf (9 pages, 185432 bytes).
 PDF statistics:
  280 PDF objects out of 1000 (max. 8388607)
  234 compressed objects within 3 object streams
