@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  18 NOV 2025 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  2 DEC 2025 10:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1159,7 +1159,7 @@ hao t¡c th¶m/xâa/t¼m
 
 
 [5]
-runsystem(latexminted cleantemp  --timestamp 20251118213837 550237B8FBCDF3741BB
+runsystem(latexminted cleantemp  --timestamp 20251202102551 550237B8FBCDF3741BB
 1127D0FC7F6BF)...executed.
 
  (./solution.aux)
